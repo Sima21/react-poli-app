@@ -14,15 +14,17 @@
 
 */
 function DisplayProfile({ profile }) {
+    if (!profile) return <div>No profile selected</div>;
+  
     return (
-        <div style={{ border: "2px solid green", width: "100%", height: "200px", marginBottom: "16px" }}>
-            Display Profile
-            <p>{profile?.name}</p>
-            <p>{profile?.country}</p>
-            <p>{profile?.position}</p>
-            <p>{profile?.biography}</p>
-        </div>
-    )
-}
-
-export default DisplayProfile
+      <div>
+        <h2>{profile.name}</h2>
+        <p>{profile.country}</p>
+        <p>{profile.position}</p>
+        <p>{profile.biography}</p>
+      </div>
+    );
+  }
+  
+  export default DisplayProfile;
+  
